@@ -139,6 +139,7 @@ async dsThongTin() {
         model.sinh_vien.refresh_token = response.refresh_token
         model.sinh_vien.expires_in = response.expires_in
         this.#setToken()
+        console.log("Đăng nhập thành công")
         return true
         // console.log(model.sinh_vien);
     }
