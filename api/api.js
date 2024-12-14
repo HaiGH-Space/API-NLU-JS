@@ -3,7 +3,7 @@ import axios from 'axios';
 import * as model from "./model.js"
 import {stringify} from "qs";
 import {gc, getOffset, isapi} from "./utils.js";
-import {dk_loc, ds_dk_loc, dsThongTin, lop} from "./model.js";
+import {assignElem, dk_loc, ds_dk_loc, dsThongTin, lop} from "./model.js";
 
 class API {
     offset = 0
@@ -53,10 +53,15 @@ async dkmh(id_to_hoc,isDK) {
     }
     try {
         const response =await this.#request("POST", apiParams.requestWithAPIUrlDKMH(apiParams.xuLydkmhSinhVien), headers,params)
-        const data = response.data
-        console.log(data)
-
-        return model.dsThongTin
+        const data = response.data;
+        model.dkmh.thong_bao_loi = data.thong_bao_loi
+        model.dkmh.is_chung_nhom_mon_hoc = data.is_chung_nhom_mon_hoc
+        model.dkmh.is_thanh_cong = data.is_thanh_cong
+        model.dkmh.ket_qua_dang_ky.enable_xoa = data.ket_qua_dang_ky.enable_xoa
+        model.dkmh.ket_qua_dang_ky.ngay_dang_ky = data.ket_qua_dang_ky.ngay_dang_ky
+        model.dkmh.ket_qua_dang_ky.id_kqdk = data.ket_qua_dang_ky.id_kqdk
+        model.dkmh.ket_qua_dang_ky.is_da_rut_mon_hoc = data.ket_qua_dang_ky.is_da_rut_mon_hoc
+        return model.dkmh
     }catch (error) {
         console.log(error.status)
         return null
@@ -142,6 +147,24 @@ async dsThongTin() {
         console.log("Đăng nhập thành công")
         return true
         // console.log(model.sinh_vien);
+    }
+    async dsDiemSinhVien() {
+        const headers = {
+            'authorization': model.sinh_vien.token,
+            'ua': await this.#getUA(apiParams.locDsDiemSinhVien)
+        }
+        try {
+            const response =await this.#request("POST", apiParams.requestWithAPIUrlPublic(apiParams.locDsDiemSinhVien)+ '?hien_thi_mon_theo_hkdk=false', headers)
+            const data = response.data
+            assignElem(model.diemSinhVien,data)
+            // assignElem(model.diem_hocky,model.diemSinhVien.ds_diem_hocky[10])
+            // assignElem(model.diem_mon_hoc,model.diem_hocky.ds_diem_mon_hoc[0])
+            // console.log(model.diem_mon_hoc.ds_diem_thanh_phan)
+            return model.diemSinhVien
+        }catch (error) {
+            console.log(error.status)
+            return null
+        }
     }
 }
 

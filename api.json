@@ -8,10 +8,11 @@
   "getCurrentLogin" : "auth/me",
   "logOut" : "auth/logout",
   "getUserOnline" : "web/w-locdsuseronline",
-  "locdsnhomto": "dkmh/w-locdsnhomto",
+  "locDsNhomTo": "dkmh/w-locdsnhomto",
   "locSinhVienInfo" : "dkmh/w-locsinhvieninfo",
   "locGiangVienInfo": "hrm/w-locgiangvieninfo",
-  "locdsdieukienloc": "dkmh/w-locdsdieukienloc",
-  "locdskqdkmhsinhvien": "dkmh/w-locdskqdkmhsinhvien",
-  "xulydkmhsinhvien": "dkmh/w-xulydkmhsinhvien"
+  "locDsDiemSinhVien": "srm/w-locdsdiemsinhvien",
+  "locDsDieuKienLoc": "dkmh/w-locdsdieukienloc",
+  "locDsKQdkmhSinhVien": "dkmh/w-locdskqdkmhsinhvien",
+  "xuLydkmhSinhVien": "dkmh/w-xulydkmhsinhvien"
 }

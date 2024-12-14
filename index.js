@@ -18,6 +18,7 @@ async function init() {
     // })
     // await api.dkmh("-8263160012138159500",true)
     // await api.dkmh("-8263160012138159500",false)
+    // await api.dsDiemSinhVien()
 }
 
 init();

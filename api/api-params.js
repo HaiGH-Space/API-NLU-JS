@@ -4,9 +4,10 @@ class APIParams {
      #root = "";
      #prefix = "";
     constructor(apiJSON) {
-        this.xuLydkmhSinhVien = apiJSON.xulydkmhsinhvien
-        this.locDsNhomTo = apiJSON.locdsnhomto
-        this.locDsDieuKienLoc = apiJSON.locdsdieukienloc
+        this.locDsDiemSinhVien = apiJSON.locDsDiemSinhVien
+        this.xuLydkmhSinhVien = apiJSON.xuLydkmhSinhVien
+        this.locDsNhomTo = apiJSON.locDsNhomTo
+        this.locDsDieuKienLoc = apiJSON.locDsDieuKienLoc
         this.#root = apiJSON.root;
         this.#prefix = apiJSON.prefix;
         this.getUrl = apiJSON.getUrl;
@@ -18,7 +19,7 @@ class APIParams {
         this.getUserOnline = apiJSON.getUserOnline
         this.locSinhVienInfo = apiJSON.locSinhVienInfo;
         this.locGiangVienInfo = apiJSON.locGiangVienInfo;
-        this.locDsKQdkmhSinhVien = apiJSON.locdskqdkmhsinhvien
+        this.locDsKQdkmhSinhVien = apiJSON.locDsKQdkmhSinhVien
     }
 
     requestWithAPI(api) {
