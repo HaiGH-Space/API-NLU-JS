@@ -90,13 +90,13 @@ Với tên biến là ds[X] trong các đối tượng api trả về đều đ�
 
 ## Running Tests
 
-To run tests, run the following command
+Để chạy test, chạy lệnh sau
 
 ```bash
   npm run start
 ```
 
-Or
+Hoặc
 
 ```bash
   node index.js
