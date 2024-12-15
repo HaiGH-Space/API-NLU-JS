@@ -29,7 +29,7 @@ Project này sẽ cung cấp các api mà trang [dkmh](https://dkmh.hcmuaf.edu.v
 
 ## Usage
 
-Tải project này về.
+Clone project này về.
 
 ```bash
 git clone https://github.com/HaiGH-Space/API-NLU-JS.git
