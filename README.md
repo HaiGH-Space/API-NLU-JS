@@ -23,7 +23,7 @@ Project này sẽ cung cấp các api mà trang [dkmh](https://dkmh.hcmuaf.edu.v
 ## Roadmap
 
 - Thêm lấy thời khóa biểu
-
+- Tối ưu offset
 
 
 
