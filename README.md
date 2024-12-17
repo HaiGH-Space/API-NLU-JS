@@ -64,7 +64,7 @@ test()
 Các đối tượng đều được định nghĩa trong file **/api/model.js**.
 
 #### Ví dụ:
-Với tên biến là ds[X] trong các đối tượng api trả về đều được định nghĩa trong **/api/model.js**.
+Với tên biến là ds[X] thì [X] là đối tượng.
 
 
 ```bash
@@ -79,7 +79,8 @@ Với tên biến là ds[X] trong các đối tượng api trả về đều đ�
  - ds_lop
  - ds_mon_hoc
  - ds_nhom_to
- Bây giờ sẽ lấy ví dụ gán giá trị ds_khoa tại ví trí 0 vào biến khoa trong model.js
+ Bây giờ sẽ lấy ví dụ:
+ ds[X] = ds_khoa, Vì vậy [X] ở đây là khoa, nên sẽ lấy biến model.[X] để gán
  */  
  model.assignElem(model.khoa, dsCacMonHoc.ds_khoa[0])
 
